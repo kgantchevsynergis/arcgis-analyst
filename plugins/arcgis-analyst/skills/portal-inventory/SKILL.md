@@ -9,9 +9,9 @@ Answer "what can you read?" with the real, permission-scoped list — never with
 
 ## What the MCP server can see
 
-The ArcGIS MCP server only returns Portal items carrying the **exposure tag**, which for this
-installation is `${user_config.item_tag}`. The tag filter is injected automatically into every
-search. Consequences you must communicate:
+The ArcGIS MCP server only returns Portal items carrying the **exposure tag** — configured for this
+installation as `${user_config.item_tag}`, and `mcp` unless someone changed it. The tag filter is
+injected automatically into every search. Consequences you must communicate:
 
 - An empty or short result means **nothing carries that tag**, not that the portal is empty. Say so explicitly.
 - Never put `tags:"${user_config.item_tag}"` into a `passthrough` query yourself — it is added for
