@@ -28,13 +28,6 @@
       "description": "Full HTTPS URL of the ArcGIS platform MCP endpoint, including any ?token= query parameter. Example: https://portal.example.com/arcgis/platform/mcp?token=AAPT...",
       "sensitive": true,
       "required": true
-    },
-    "item_tag": {
-      "type": "string",
-      "title": "Exposure tag",
-      "description": "The Portal item tag the MCP server is scoped to. Only items carrying this tag are visible to Claude. Defaults to mcp.",
-      "required": false,
-      "default": "mcp"
     }
   },
   "defaultEnabled": true

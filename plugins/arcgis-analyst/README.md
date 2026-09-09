@@ -19,12 +19,15 @@ claude plugin marketplace add kgantchevsynergis/arcgis-analyst
 claude plugin install arcgis-analyst@synergis-gis
 ```
 
-Claude Code prompts for the configured values on enable:
+Claude Code prompts for one value on enable:
 
 | Field | Required | Notes |
 | --- | --- | --- |
 | **ArcGIS MCP endpoint** | yes | Full HTTPS URL of the platform MCP endpoint, including any `?token=` parameter. Declared `sensitive`, so it goes to the OS secure store, not `settings.json`. |
-| **Exposure tag** | no | The Portal item tag the server is scoped to. Default `mcp`. Interpolated into the `portal-inventory` and `layer-report` skills as `${user_config.item_tag}`, so the skills describe your deployment rather than assuming `mcp`. |
+
+That is the only setting. The exposure tag the server filters on is decided by the deployment, not
+by the plugin, so there is nothing useful to configure here — the skills assume `mcp` and read the
+real tag off the `tags` array of any item that comes back.
 
 Endpoint shape:
 

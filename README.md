@@ -28,9 +28,9 @@ claude plugin marketplace add https://github.com/kgantchevsynergis/arcgis-analys
 
 On enable, Claude Code prompts for the **ArcGIS MCP endpoint** — the full HTTPS URL of the platform
 MCP endpoint including any `?token=` parameter. It is declared `sensitive`, so it goes to the OS
-secure store rather than `settings.json`, and no credential is ever committed here. The one optional
-setting is the **Exposure tag** (default `mcp`), which the skills interpolate so they describe your
-deployment rather than assuming the default.
+secure store rather than `settings.json`, and no credential is ever committed here. That is the only
+setting — the exposure tag the server filters on belongs to the deployment, so the skills assume
+`mcp` and read the real one off the items they retrieve.
 
 Full documentation, tool list and read-only permission allowlist: [`plugins/arcgis-analyst/README.md`](plugins/arcgis-analyst/README.md).
 
