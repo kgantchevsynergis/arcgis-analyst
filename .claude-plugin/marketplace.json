@@ -7,13 +7,10 @@
     "email": "it@mysynergis.com",
     "url": "https://mysynergis.com"
   },
-  "metadata": {
-    "pluginRoot": "./plugins"
-  },
   "plugins": [
     {
       "name": "arcgis-portal",
-      "source": "arcgis-portal",
+      "source": "./plugins/arcgis-portal",
       "displayName": "ArcGIS Portal",
       "description": "Read and query an ArcGIS Enterprise Portal from Claude Code: item discovery, layer inspection, SQL-92 feature queries, aggregations, geocoding and map export.",
       "version": "1.0.0",
