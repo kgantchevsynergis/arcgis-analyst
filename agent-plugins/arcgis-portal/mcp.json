@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "arcgis": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${PLUGIN_ROOT}/bin/arcgis-mcp.mjs"],
+      "cwd": "${PLUGIN_ROOT}",
+      "env": {
+        "ARCGIS_MCP_CACHE_DIR": "${PLUGIN_DATA}/mcp-remote"
+      }
+    }
+  }
+}

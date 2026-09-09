@@ -1,0 +1,27 @@
+{
+  "$schema": "https://claude.ai/schemas/marketplace.json",
+  "name": "synergis-gis",
+  "description": "Synergis GIS plugins for Claude Code - ArcGIS Enterprise Portal integration",
+  "owner": {
+    "name": "Synergis",
+    "email": "it@mysynergis.com",
+    "url": "https://mysynergis.com"
+  },
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "arcgis-portal",
+      "source": "arcgis-portal",
+      "displayName": "ArcGIS Portal",
+      "description": "Read and query an ArcGIS Enterprise Portal from Claude Code: item discovery, layer inspection, SQL-92 feature queries, aggregations, geocoding and map export.",
+      "version": "1.0.0",
+      "author": { "name": "Synergis", "email": "it@mysynergis.com" },
+      "repository": "https://github.com/kgantchevsynergis/arcgis-analyst",
+      "license": "MIT",
+      "category": "data",
+      "keywords": ["arcgis", "esri", "gis", "portal", "feature-service", "geospatial"]
+    }
+  ]
+}
