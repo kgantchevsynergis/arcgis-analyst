@@ -29,13 +29,6 @@
       "sensitive": true,
       "required": true
     },
-    "portal_url": {
-      "type": "string",
-      "title": "Portal home URL",
-      "description": "Optional. Portal home URL used in explanations and links, e.g. https://portal.example.com/portal. Not used for authentication.",
-      "required": false,
-      "default": ""
-    },
     "item_tag": {
       "type": "string",
       "title": "Exposure tag",

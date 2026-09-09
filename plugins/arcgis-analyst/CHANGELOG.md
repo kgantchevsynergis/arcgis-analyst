@@ -5,7 +5,8 @@
 Initial release. Claude Code plugin format.
 
 - `.claude-plugin/plugin.json` — manifest with `userConfig`: `mcp_endpoint` (declared sensitive,
-  required), `portal_url`, `item_tag`
+  required) and `item_tag` (default `mcp`), the latter interpolated into the skills as
+  `${user_config.item_tag}`
 - `.mcp.json` — `arcgis` server over HTTP, URL from `${user_config.mcp_endpoint}`
 - `.claude-plugin/marketplace.json` at the repository root — marketplace `synergis-gis`
 - Skill `portal-inventory` — permission-scoped list of readable items, services and layer IDs

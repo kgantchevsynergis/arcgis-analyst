@@ -24,8 +24,7 @@ Claude Code prompts for the configured values on enable:
 | Field | Required | Notes |
 | --- | --- | --- |
 | **ArcGIS MCP endpoint** | yes | Full HTTPS URL of the platform MCP endpoint, including any `?token=` parameter. Declared `sensitive`, so it goes to the OS secure store, not `settings.json`. |
-| **Portal home URL** | no | Used in explanations only, never for authentication. |
-| **Exposure tag** | no | The Portal item tag the server is scoped to. Default `mcp`. |
+| **Exposure tag** | no | The Portal item tag the server is scoped to. Default `mcp`. Interpolated into the `portal-inventory` and `layer-report` skills as `${user_config.item_tag}`, so the skills describe your deployment rather than assuming `mcp`. |
 
 Endpoint shape:
 

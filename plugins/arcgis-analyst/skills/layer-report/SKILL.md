@@ -21,7 +21,8 @@ Build a written record of the portal that someone can read without Claude Code. 
 
 One Markdown file. Sections in this order:
 
-1. **Header** — portal host, date, the exposure tag that scopes visibility.
+1. **Header** — portal host, date, and the exposure tag that scopes visibility
+   (`${user_config.item_tag}` for this installation).
 2. **Visible items** — table of title, type, access, item id. State explicitly that only tagged items
    are listed, so a later reader does not mistake the list for the whole portal.
 3. **Layers per service** — table of layer id, name, geometry, one-line content. Keep the real ids,
