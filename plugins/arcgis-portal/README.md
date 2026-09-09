@@ -9,8 +9,8 @@ with the workflow knowledge needed to use it correctly.
 - **Agent** — `gis-analyst`, read-only, for multi-step analysis
 
 > This is Anthropic's plugin format. The cross-vendor **Agent Plugins 1.0.0** build of the same
-> integration lives in `../../agent-plugins/arcgis-portal/` — Claude Code does not read that
-> format. See [Relationship to Agent Plugins 1.0.0](#relationship-to-agent-plugins-100).
+> integration lives in a separate repository — Claude Code does not read that format. See
+> [Relationship to Agent Plugins 1.0.0](#relationship-to-agent-plugins-100).
 
 ## Install
 
@@ -125,9 +125,9 @@ Claude Code 2.1.263 does not implement the cross-vendor
 `.claude-plugin/plugin.json` and `.mcp.json`, not a root `plugin.json` and `mcp.json`. Anthropic is
 not a core maintainer of that spec and appears on no client list.
 
-The two builds are deliberately kept as separate directories rather than one hybrid:
+The two builds are deliberately kept as separate repositories rather than one hybrid:
 
-| | This plugin | `agent-plugins/arcgis-portal/` |
+| | This plugin | the Agent Plugins 1.0.0 build |
 | --- | --- | --- |
 | Manifest | `.claude-plugin/plugin.json` | `plugin.json` (root) |
 | MCP config | `.mcp.json`, `type: http` | `mcp.json`, `type: stdio` + bridge |
@@ -135,4 +135,4 @@ The two builds are deliberately kept as separate directories rather than one hyb
 | Agent | `agents/gis-analyst.md` | not in the spec |
 | Skills | `skills/` | `skills/` — byte-identical copies |
 
-The `skills/` directories are identical in both trees; keep them in sync when editing.
+The `skills/` directories are byte-identical in both repositories; keep them in sync when editing.

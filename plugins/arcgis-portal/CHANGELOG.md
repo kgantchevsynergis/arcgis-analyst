@@ -15,4 +15,4 @@ Initial release. Claude Code plugin format.
 - Agent `gis-analyst` — read-only, restricted to the ArcGIS read tools plus local file tools
 
 Split out of the initial dual-format directory: the Agent Plugins 1.0.0 build of the same
-integration now lives in `agent-plugins/arcgis-portal/`, since Claude Code does not read that format.
+integration now lives in its own repository, since Claude Code does not read that format.
