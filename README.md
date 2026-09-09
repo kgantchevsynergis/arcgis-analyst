@@ -8,7 +8,7 @@ The repository root is the marketplace, so installing takes two commands:
 
 ```bash
 claude plugin marketplace add kgantchevsynergis/arcgis-analyst
-claude plugin install arcgis-portal@synergis-gis
+claude plugin install arcgis-analyst@synergis-gis
 ```
 
 If the repository is private, add it by full HTTPS URL instead — the `owner/repo` shorthand clones
@@ -31,7 +31,7 @@ MCP endpoint including any `?token=` parameter. It is declared `sensitive`, so i
 secure store rather than `settings.json`, and no credential is ever committed here. The optional
 **Portal home URL** and **Exposure tag** (default `mcp`) round out the configuration.
 
-Full documentation, tool list and read-only permission allowlist: [`plugins/arcgis-portal/README.md`](plugins/arcgis-portal/README.md).
+Full documentation, tool list and read-only permission allowlist: [`plugins/arcgis-analyst/README.md`](plugins/arcgis-analyst/README.md).
 
 ## Skills
 
@@ -48,7 +48,7 @@ The skills carry the operational knowledge, not just the tools:
 ```
 arcgis-analyst/
 ├── .claude-plugin/marketplace.json     # marketplace: synergis-gis
-└── plugins/arcgis-portal/
+└── plugins/arcgis-analyst/
     ├── .claude-plugin/plugin.json      # manifest, userConfig
     ├── .mcp.json                       # the arcgis HTTP server
     ├── skills/{portal-inventory,layer-query,layer-report}/SKILL.md
@@ -62,7 +62,7 @@ Only `plugin.json` belongs inside `.claude-plugin/`; every other component sits 
 
 ```bash
 claude plugin validate .                       # marketplace + every plugin in it
-claude plugin validate ./plugins/arcgis-portal
+claude plugin validate ./plugins/arcgis-analyst
 ```
 
 ## Agent Plugins 1.0.0

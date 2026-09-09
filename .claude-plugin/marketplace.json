@@ -9,9 +9,9 @@
   },
   "plugins": [
     {
-      "name": "arcgis-portal",
-      "source": "./plugins/arcgis-portal",
-      "displayName": "ArcGIS Portal",
+      "name": "arcgis-analyst",
+      "source": "./plugins/arcgis-analyst",
+      "displayName": "ArcGIS Analyst",
       "description": "Read and query an ArcGIS Enterprise Portal from Claude Code: item discovery, layer inspection, SQL-92 feature queries, aggregations, geocoding and map export.",
       "version": "1.0.0",
       "author": { "name": "Synergis", "email": "it@mysynergis.com" },

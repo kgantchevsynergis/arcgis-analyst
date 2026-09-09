@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
-  "name": "arcgis-portal",
-  "displayName": "ArcGIS Portal",
+  "name": "arcgis-analyst",
+  "displayName": "ArcGIS Analyst",
   "version": "1.0.0",
   "description": "Read and query an ArcGIS Enterprise Portal from Claude Code. Bundles the ArcGIS MCP server plus skills for portal inventory, disciplined layer queries and inventory reports, and a read-only GIS analyst agent.",
   "author": {

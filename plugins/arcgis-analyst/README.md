@@ -1,11 +1,11 @@
-# ArcGIS Portal — Claude Code plugin
+# ArcGIS Analyst — Claude Code plugin
 
 Reads and queries an ArcGIS Enterprise Portal from Claude Code: item discovery, layer inspection,
 SQL-92 feature queries, aggregations, geocoding, map export. Bundles the ArcGIS MCP server together
 with the workflow knowledge needed to use it correctly.
 
 - **MCP server** — `arcgis`, HTTP transport, endpoint supplied per install
-- **Skills** — `/arcgis-portal:portal-inventory`, `/arcgis-portal:layer-query`, `/arcgis-portal:layer-report`
+- **Skills** — `/arcgis-analyst:portal-inventory`, `/arcgis-analyst:layer-query`, `/arcgis-analyst:layer-report`
 - **Agent** — `gis-analyst`, read-only, for multi-step analysis
 
 > This is Anthropic's plugin format. The cross-vendor **Agent Plugins 1.0.0** build of the same
@@ -16,7 +16,7 @@ with the workflow knowledge needed to use it correctly.
 
 ```bash
 claude plugin marketplace add kgantchevsynergis/arcgis-analyst
-claude plugin install arcgis-portal@synergis-gis
+claude plugin install arcgis-analyst@synergis-gis
 ```
 
 Claude Code prompts for the configured values on enable:
@@ -38,7 +38,7 @@ Change a value later with `/plugin` → the plugin → **Configure**.
 ## Test before installing
 
 ```bash
-claude --plugin-dir ./plugins/arcgis-portal
+claude --plugin-dir ./plugins/arcgis-analyst
 ```
 
 `--plugin-dir` takes precedence over an installed copy of the same name for that session, so this is
@@ -47,7 +47,7 @@ picks up the changes — including the MCP server — without restarting.
 
 ```bash
 claude plugin validate .                       # marketplace + every plugin in it
-claude plugin validate ./plugins/arcgis-portal
+claude plugin validate ./plugins/arcgis-analyst
 ```
 
 ## Tool names
@@ -55,12 +55,12 @@ claude plugin validate ./plugins/arcgis-portal
 Plugin MCP tools are namespaced. Hyphens in the plugin name become underscores:
 
 ```
-mcp__plugin_arcgis_portal_arcgis__<tool>
+mcp__plugin_arcgis_analyst_arcgis__<tool>
 ```
 
-So `query_data` is `mcp__plugin_arcgis_portal_arcgis__query_data`. Use that form in `tools:` lists,
+So `query_data` is `mcp__plugin_arcgis_analyst_arcgis__query_data`. Use that form in `tools:` lists,
 hook matchers and permission rules. In hook `mcp_tool` server fields the address is
-`plugin:arcgis-portal:arcgis`.
+`plugin:arcgis-analyst:arcgis`.
 
 Read-only allowlist for `.claude/settings.json`:
 
@@ -68,12 +68,12 @@ Read-only allowlist for `.claude/settings.json`:
 {
   "permissions": {
     "allow": [
-      "mcp__plugin_arcgis_portal_arcgis__search_portal_content",
-      "mcp__plugin_arcgis_portal_arcgis__describe_item",
-      "mcp__plugin_arcgis_portal_arcgis__describe_layer",
-      "mcp__plugin_arcgis_portal_arcgis__query_data",
-      "mcp__plugin_arcgis_portal_arcgis__find_address_candidates",
-      "mcp__plugin_arcgis_portal_arcgis__reverse_geocode"
+      "mcp__plugin_arcgis_analyst_arcgis__search_portal_content",
+      "mcp__plugin_arcgis_analyst_arcgis__describe_item",
+      "mcp__plugin_arcgis_analyst_arcgis__describe_layer",
+      "mcp__plugin_arcgis_analyst_arcgis__query_data",
+      "mcp__plugin_arcgis_analyst_arcgis__find_address_candidates",
+      "mcp__plugin_arcgis_analyst_arcgis__reverse_geocode"
     ]
   }
 }
@@ -104,7 +104,7 @@ setting. The skills are written to report that scope honestly — an empty resul
 ## Layout
 
 ```
-arcgis-portal/
+arcgis-analyst/
 ├── .claude-plugin/plugin.json     # manifest: identity, version, userConfig
 ├── .mcp.json                      # the arcgis HTTP server
 ├── skills/
